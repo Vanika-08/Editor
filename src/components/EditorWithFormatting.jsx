@@ -15,7 +15,7 @@ const EditorWithFormatting = () => {
     EditorState.createEmpty()
   );
 
-  const editorRef = useRef(null);
+  const editorRef = useRef(null); // Ensure this is used correctly
 
   const customStyleMap = {
     RED: { color: "red" },
@@ -176,43 +176,42 @@ const EditorWithFormatting = () => {
       </h3>
 
       <div
-  style={{
-    border: "1px solid #007BFF",
-    padding: "15px",
-    minHeight: "300px",
-    cursor: "text",
-    margin: "20px",
-    position: "relative", // Add this
-  }}
-  onClick={() => editorRef.current.focus()}
->
-  <Editor
-    ref={editorRef}
-    editorState={editorState}
-    onChange={setEditorState}
-    handleKeyCommand={handleKeyCommand}
-    handleBeforeInput={handleBeforeInput}
-    customStyleMap={customStyleMap}
-  />
-  <button
-    onClick={handleSave}
-    style={{
-      position: "absolute", // Make it fixed inside parent
-      bottom: "10px", // Fixed distance from bottom
-      right: "10px", // Fixed distance from right
-      padding: "5px 15px",
-      fontSize: "14px",
-      border: "1px 5px 3px 1px solid #000",
-      background: "white",
-      cursor: "pointer",
-      borderRadius: "0px",
-      boxShadow: "3px 3px rgba(0, 0, 0, 1)"
-    }}
-  >
-    Save
-  </button>
-</div>
-
+        style={{
+          border: "1px solid #007BFF",
+          padding: "15px",
+          minHeight: "300px",
+          cursor: "text",
+          margin: "20px",
+          position: "relative", // Add this
+        }}
+        onClick={() => editorRef.current.focus()}
+      >
+        <Editor
+          ref={editorRef}
+          editorState={editorState}
+          onChange={setEditorState}
+          handleKeyCommand={handleKeyCommand}
+          handleBeforeInput={handleBeforeInput}
+          customStyleMap={customStyleMap}
+        />
+        <button
+          onClick={handleSave}
+          style={{
+            position: "absolute", // Make it fixed inside parent
+            bottom: "10px", // Fixed distance from bottom
+            right: "10px", // Fixed distance from right
+            padding: "5px 15px",
+            fontSize: "14px",
+            border: "1px 5px 3px 1px solid #000",
+            background: "white",
+            cursor: "pointer",
+            borderRadius: "0px",
+            boxShadow: "3px 3px rgba(0, 0, 0, 1)",
+          }}
+        >
+          Save
+        </button>
+      </div>
     </>
   );
 };
