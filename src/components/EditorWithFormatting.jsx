@@ -130,8 +130,8 @@ const EditorWithFormatting = () => {
   };
 
   const transformBlock = (editorState, style) => {
-    const contentState = editorState.getCurrentContent();
-    const selection = editorState.getSelection();
+    // const contentState = editorState.getCurrentContent();
+    // const selection = editorState.getSelection();
 
     // Step 1: Remove all inline styles
     const currentStyle = editorState.getCurrentInlineStyle();
